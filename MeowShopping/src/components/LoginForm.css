@@ -1,0 +1,135 @@
+.login {
+  max-width: 31.25rem;
+  margin: 10rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  min-width: 30rem;
+  overflow: hidden;
+}
+
+.login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.25rem;
+  background: var(--gradient-primary);
+}
+
+.login h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: var(--primary-color);  
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;  
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.login__form input {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: var(--background-color);
+}
+
+.login__form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.login__form input::placeholder {
+  color: var(--text-color);
+}
+
+.login__error {
+  color: var(--danger-color);
+  background: rgba(220, 38, 38, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  animation: shake 0.5s ease;
+}
+
+.login__form button[type="submit"] {
+  padding: 0.75rem;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.login__form button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.login__form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.login__switch-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.login__switch-btn:hover {
+  color: var(--primary-dark);
+  background: var(--background-color);
+  border-radius: 0.5rem;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@media (max-width: 30rem) {
+  .login {
+    margin: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .login h2 {
+    font-size: 1.5rem;
+  }
+
+  .login__form {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,114 @@
+.product-item {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  min-width: 20rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.product-item h3{
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.product-item p{
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--success-color);
+  text-align: center;
+  background: var(--gradient-success);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+ 
+}
+.product-item p::before {
+  content: '$';
+  font-size: 1rem;
+  vertical-align: top;
+  opacity: 0.8;
+}
+
+
+.product-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.product-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-item:hover::before {
+  opacity: 1;
+}
+
+.product-image {
+  width: 12.5rem;
+  height: 12.5rem;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.add-to-cart-btn {
+  padding: 0.7rem 1rem;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.add-to-cart-btn.adding {
+  background: var(--gradient-success);
+}
+
+@media (max-width: 768px) {
+  .product-image {
+    height: 12rem;
+  }
+} 
